@@ -12,21 +12,25 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
-    return {
-        name: name,
-        salary: salary
-    }
+    
+    var employee = {}
+
+    employee.name = name;
+    employee.salary = salary;
+    employee.sayMyName = sayMyName;
+    employee.sayHello = sayHello;
+    employee.increaseSalary = increaseSalary;
+    return employee;
 }
-
-var employeeA = employee("jack", 100);
-var employeeB = employee("Mark", 200);
-var employeeC = employee("Sara", 150);
-
 
 //create a function when invoked returns the name of that employee.
 
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
+
+var sayMyName = function() {
+    return this.name;
+}
 
 
 //now modify that closure and add a function that says hello to the employee name;
@@ -34,9 +38,17 @@ var employeeC = employee("Sara", 150);
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
 
+var sayHello = function() {
+    return 'Hello ' + this.name; 
+}
+
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
 
+var increaseSalary = function(n) {
+    this.salary = this.salary + n;
+    return 'your salary is ' + this.salary + '$';
+}
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
@@ -47,7 +59,9 @@ var employeeC = employee("Sara", 150);
 
 // employeeA.listFriends(); // "you have 2 friends"
 
-
+var employeeA = employee("jack", 100);
+var employeeB = employee("Mark", 200);
+var employeeC = employee("Sara", 150);
 //=============================================================================
 /*                                  Q2                                       */
 //=============================================================================
