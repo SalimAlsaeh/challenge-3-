@@ -183,7 +183,14 @@ function reduce(array, f, acc) {
 
 // Write your code here .....
 
-
+function max(numbers){
+    return reduce(numbers, function(max, el){
+        if (max < el) {
+            max = el;
+        }
+        return max;
+    });
+}
 
 
 //================================================================================

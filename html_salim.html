@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My easy Assessment</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<hr>
+	<div id="myInfo">
+		<h1>HTML is Eazy</h1>
+		<p>HyperText Markup Language (HTML) is the standard markup language for creating web pages and web applications.</p>
+	</div>
+	<ul>
+		
+	</ul>
+	<input type="text" name="sa">
+	<button type="button" onclick="add()">Add</button>
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script>
+		function add(){
+			var x = $('input').text()
+			$('ul').append(`<li> ${x} <li>`)
+		}
+    </script>
+</body>
+</html>
+
+// 3. Write javascript function when user type text inside the input text and click the "Add" 
+//     button it will add the text to the ul element.
