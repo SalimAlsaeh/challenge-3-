@@ -85,6 +85,7 @@ var listFriends = function(){
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
 var employeeC = employee("Sara", 150);
+
 //=============================================================================
 /*                                  Q2                                       */
 //=============================================================================
@@ -107,8 +108,50 @@ var employeeC = employee("Sara", 150);
 
 // Write your code here .....
 
+function Pet(name){
+    var pet = {};
 
+    pet.name = name;
+    pet.age;
+    pet.owner;
+    pet.gender;
+    pet.species;
+    pet.availability = false;
+    pet.addInfo = addInfo;
+
+    return pet;
+}
+
+var addInfo = function(age, owner, gender, species){
+    this.age = age;
+    this.owner = owner;
+    this.gender = gender;
+    this.species = species;
+    return 'Info added';
+}
+
+var increaseAge = function(n){
+    this.age = this.age + n;
+    return 'age increased';
+}
+
+var isAvailble = function(){
+    if (this.availability) {
+        return true;
+    }
+    return false;
+}
+
+var changeState = function(){
+    if (this.availability) {
+        this.availability = false;
+    } else {
+        this.availability = true;
+    }
+    return 'state changes!'
+}
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+//Yes I am;
 
 //=============================================================================
 /*                                  Q3                                       */
