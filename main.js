@@ -12,7 +12,7 @@
 //lets make an employee profile using closures
 
 function employee(name, salary) {
-    
+    var friends = [];
     var employee = {}
 
     employee.name = name;
@@ -20,6 +20,9 @@ function employee(name, salary) {
     employee.sayMyName = sayMyName;
     employee.sayHello = sayHello;
     employee.increaseSalary = increaseSalary;
+    employee.friends = friends;
+    employee.addFriend = addFriend;
+
     return employee;
 }
 
@@ -54,6 +57,21 @@ var increaseSalary = function(n) {
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
+
+var addFriend = function(friend){
+    var str = '';
+    this.friends.push(friend);
+    var length = this.friends.length - 1;
+
+    each(this.friends, function(el, i){
+        if (i === length) {
+            str = str + el.name;
+        } else
+        str = str + el.name + ' and ';
+    });
+    
+    return 'you just became friend with ' + str;
+}
 
 //modify your closure to tell mark how many friends does he have.
 
