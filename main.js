@@ -22,6 +22,7 @@ function employee(name, salary) {
     employee.increaseSalary = increaseSalary;
     employee.friends = friends;
     employee.addFriend = addFriend;
+    employee.listFriends = listFriends;
 
     return employee;
 }
@@ -69,13 +70,17 @@ var addFriend = function(friend){
         } else
         str = str + el.name + ' and ';
     });
-    
+
     return 'you just became friend with ' + str;
 }
 
 //modify your closure to tell mark how many friends does he have.
 
 // employeeA.listFriends(); // "you have 2 friends"
+
+var listFriends = function(){
+    return "you have " + this.friends.length + " friend's'";
+}
 
 var employeeA = employee("jack", 100);
 var employeeB = employee("Mark", 200);
